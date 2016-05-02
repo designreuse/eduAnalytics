@@ -27,7 +27,7 @@
         <!-- Sidebar toggle button-->
         <a href="#dashboard" class="logo">
             <!-- Add the class icon to your logo image or logo icon to add the margining -->
-            eCW-Analytics
+            eduAnalytics
         </a>
         <div class="navbar-right">
             <ul class="nav navbar-nav">

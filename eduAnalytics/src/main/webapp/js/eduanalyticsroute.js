@@ -5,8 +5,8 @@ eduAnalyticsApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider
         .when('/dashboard', {
             templateUrl: 'jsp/dashboard/dashboard.jsp'
-        }).when('/device', {
-            templateUrl: 'jsp/general/device/deviceinfo.jsp'
+        }).when('/discipline', {
+            templateUrl: 'jsp/discipline/disciplinereport.jsp'
         }).when('/performance', {
             templateUrl: 'jsp/general/performance/performanceinfo.jsp'
         }).when('/datapopulation', {

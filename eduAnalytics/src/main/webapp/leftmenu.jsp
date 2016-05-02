@@ -8,39 +8,29 @@
                         </div>
                         <div class="pull-left info">
                             <p>Willis,Sam</p>
-
-                            <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
                         </div>
                     </div>
-<!--                     search form 
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                        </div>
-                    </form>-->
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="#dashboard">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#device">
-                                <i class="fa fa-th"></i> <span>Device Analytics</span> 
-                                <!--<small class="badge pull-right bg-green">new</small>-->
-                            </a>
-                        </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>Product Usage Analytics</span>
+                                <span>Student Data Analytics</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Global</a></li>
-                                <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> APU Wise</a></li>
+                                <li><a href="#discipline"><i class="fa fa-angle-double-right"></i> Discipline Wise</a></li>
+                                <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Course Wise</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#discipline">
+                                <i class="fa fa-th"></i> <span>Discipline Analytics</span> 
+                            </a>
                         </li>
                         <li class="treeview">
                             <a href="#">                                
