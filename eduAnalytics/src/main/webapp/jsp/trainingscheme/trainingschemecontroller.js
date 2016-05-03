@@ -4,28 +4,27 @@
  * and open the template in the editor.
  */
 var colorArry = ["#FFB246", "Salmon", "HotPink", "LightSeaGreen", "#999EFF", "#3A78C1", "#A9FF96", "#FF7599", "#7AC5CD", "#FFB90F", "#ADE6D8", "LightGreen", "#8282EE", "#D8E6AD"];
-eduAnalyticsApp.controller('disciplinereportcontroller', function($scope, $http) {
+eduAnalyticsApp.controller('trainingschemecontroller', function($scope, $http) {
     $scope.selectedYear = 0;
     $scope.yearArray = ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'];
     $scope.initCharts = function() {
-        $scope.plotDisciplineWiseStudentCountChart($scope.selectedYear);
-        // plotSubDisciplineWiseStudentCountChart('Mechanical Engineering', $scope.selectedYear);
+        $scope.plotTSWiseStudentCountChart($scope.selectedYear);
     };
 
     $scope.changeYear = function() {
-        $scope.plotDisciplineWiseStudentCountChart($scope.selectedYear);
+        $scope.plotTSWiseStudentCountChart($scope.selectedYear);
     };
 
-    $scope.plotDisciplineWiseStudentCountChart = function(year) {
-        var pie1 = $('#discipline-pie');
+    $scope.plotTSWiseStudentCountChart = function(year) {
+        var pie1 = $('#trainingscheme-pie');
 
         if (pie1.length) {
             $.ajax({
                 dataType: "json",
-                url: '/eduAnalytics/reportscontroller.jsp?action=getDisciplineWiseStudentCount&year=' + year,
+                url: '/eduAnalytics/reportscontroller.jsp?action=getTrainingSchemeWiseStudentCount&year=' + year,
                 success: function(data) {
                     console.log(data);
-                    $('#discipline-pie').highcharts({
+                    $('#trainingscheme-pie').highcharts({
                         credits: false,
                         chart: {
                             plotBackgroundColor: null,
@@ -33,7 +32,7 @@ eduAnalyticsApp.controller('disciplinereportcontroller', function($scope, $http)
                             plotShadow: false
                         },
                         title: {
-                            text: "Discipline wise Student Count"
+                            text: "Training Scheme wise Student Count"
                         },
                         tooltip: {
                             pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
@@ -61,32 +60,32 @@ eduAnalyticsApp.controller('disciplinereportcontroller', function($scope, $http)
                                 point: {
                                     events: {
                                         click: function(event) {
-                                            $scope.plotSubDisciplineWiseStudentCountChart(this.name, $scope.selectedYear);
+                                            $scope.plotSubTSWiseStudentCountChart(this.name, $scope.selectedYear);
                                         }
                                     }
                                 }
                             }]
                     });
 
-                    var chart = $('#discipline-pie').highcharts();
+                    var chart = $('#trainingscheme-pie').highcharts();
                     if (year != 0) {
-                        chart.setTitle({text: 'Discipline wise Student Count for year-' + year});
+                        chart.setTitle({text: 'Training Scheme wise Student Count for year-' + year});
                     }
                 }
             });
         }
     };
     
-    $scope.plotSubDisciplineWiseStudentCountChart = function(discipline, year) {
-        var pie1 = $('#subdiscipline-pie');
-        var encodediscipline=encodeURIComponent(discipline);
+    $scope.plotSubTSWiseStudentCountChart = function(schemetype, year) {
+        var pie1 = $('#subtrainingscheme-pie');
+        var encodeschemetype=encodeURIComponent(schemetype);
         if (pie1.length) {
             $.ajax({
                 dataType: "json",
-                url: '/eduAnalytics/reportscontroller.jsp?action=getSubDisciplineWiseStudentCount&discipline=' + encodediscipline + '&year=' + year,
+                url: '/eduAnalytics/reportscontroller.jsp?action=getSubTrainingSchemeWiseStudentCount&schemetype=' + encodeschemetype + '&year=' + year,
                 success: function(data) {
                     console.log(data);
-                    $('#subdiscipline-pie').highcharts({
+                    $('#subtrainingscheme-pie').highcharts({
                         credits: false,
                         chart: {
                             plotBackgroundColor: null,
@@ -94,7 +93,7 @@ eduAnalyticsApp.controller('disciplinereportcontroller', function($scope, $http)
                             plotShadow: false
                         },
                         title: {
-                            text: "Sub Discipline wise Student Count for Discipline-<b>"+discipline+"</b>"
+                            text: "Sub Training Scheme wise Student Count for Training Scheme-<b>"+schemetype+"</b>"
                         },
                         tooltip: {
                             pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
@@ -122,9 +121,9 @@ eduAnalyticsApp.controller('disciplinereportcontroller', function($scope, $http)
                             }]
                     });
                     
-                    var chart = $('#subdiscipline-pie').highcharts();
+                    var chart = $('#subtrainingscheme-pie').highcharts();
                     if (year != 0) {
-                        chart.setTitle({text: 'Sub Discipline wise Student Count for Discipline-<b>'+discipline+'</b> & year-<b>' + year+'</b>'});
+                        chart.setTitle({text: 'Sub Training Scheme Student Count for Training Scheme-<b>'+schemetype+'</b> & year-<b>' + year+'</b>'});
                     }
                 }
             });

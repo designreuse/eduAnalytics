@@ -1,10 +1,12 @@
+package com.eduanalytics.utilities;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package com.eduAnalytics.utilities;
+
 
 /**
  *
@@ -13,8 +15,12 @@ package com.eduAnalytics.utilities;
 public class AnalyticsConstants {
     
     public static final String GETDISCIPLINEWISE_STUDENT_COUNT="getDisciplineWiseStudentCount";
-    public static final String GETDISCIPLINEWISE_STUDENT_COUNT_YEAR="getDisciplineWiseStudentCountPerYear";
-    public static final String GETOSCOUNT="getOSCount";
+    public static final String GETSUBDISCIPLINEWISE_STUDENT_COUNT="getSubDisciplineWiseStudentCount";
+    public static final String GETTRAININGSCHEMEWISE_STUDENT_COUNT="getTrainingSchemeWiseStudentCount";
+    public static final String GETSUBTRAININGSCHEMEWISE_STUDENT_COUNT="getSubTrainingSchemeWiseStudentCount";
+    
+    
+    
     public static final String GETSCREENRESOLUTIONCOUNT="getScreenResolutionCount";
     public static final String GETTOPTIMETAKENURLS="getTopTimeTakenURLs";
     public static final String GETRESPONSESTATUSWISEURLS="getResponseStatusWiseURLs";

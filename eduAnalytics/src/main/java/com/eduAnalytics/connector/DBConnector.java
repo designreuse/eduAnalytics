@@ -1,9 +1,11 @@
+package com.eduanalytics.connector;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.eduAnalytics.connector;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,6 +32,7 @@ public class DBConnector {
             dbName = "edudb";
             url = "jdbc:mysql://localhost:4928/" + dbName;
             Class.forName(driverName);
+            System.out.println("success");
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

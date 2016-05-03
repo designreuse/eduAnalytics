@@ -24,6 +24,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="#discipline"><i class="fa fa-angle-double-right"></i> Discipline Wise</a></li>
+                                <li><a href="#trainingscheme"><i class="fa fa-angle-double-right"></i> Training Scheme Wise</a></li>
                                 <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Course Wise</a></li>
                             </ul>
                         </li>
