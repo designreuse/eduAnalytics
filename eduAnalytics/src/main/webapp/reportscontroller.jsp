@@ -1,5 +1,5 @@
-<%@page import="com.eduanalytics.utilities.AnalyticsConstants"%>
-<%@page import="com.eduanalytics.dao.ReportsDAO"%>
+<%@page import="com.eduAnalytics.utilities.AnalyticsConstants"%>
+<%@page import="com.eduAnalytics.dao.ReportsDAO"%>
 <%
     String action = request.getParameter("action");
     if (action != null && !action.isEmpty()) {
@@ -18,6 +18,8 @@
             String year = request.getParameter("year");
             String schemetype = request.getParameter("schemetype");
             out.println(dao.getSubTrainingSchemeWiseStudentCount(schemetype,Integer.parseInt(year)));
-        }       
+        } else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT)){
+            out.println(dao.getYearWiseInstituteCount());
+        }      
     }
 %>

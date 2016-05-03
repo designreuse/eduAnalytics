@@ -1,4 +1,5 @@
-package com.eduanalytics.utilities;
+package com.eduAnalytics.utilities;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +19,7 @@ public class AnalyticsConstants {
     public static final String GETSUBDISCIPLINEWISE_STUDENT_COUNT="getSubDisciplineWiseStudentCount";
     public static final String GETTRAININGSCHEMEWISE_STUDENT_COUNT="getTrainingSchemeWiseStudentCount";
     public static final String GETSUBTRAININGSCHEMEWISE_STUDENT_COUNT="getSubTrainingSchemeWiseStudentCount";
+    public static final String GETYEARWISEINSTITUTE_COUNT="getYearWiseInstituteCount";
     
     
     

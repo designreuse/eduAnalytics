@@ -1,4 +1,5 @@
-package com.eduanalytics.connector;
+package com.eduAnalytics.connector;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
