@@ -27,74 +27,34 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Device Analytics
+                Discipline Wise
             </h1>
-<!--            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>-->
         </section>
 
         <!-- Main content -->
         <section class="content" ng-init="initCharts()">
-            <div class="row" style="display: none;">
-                <div class="col-md-6">
-                    <!-- AREA CHART -->
-                    <div class="box box-primary">
-                        <div class="box-header">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <h3 class="box-title">User Agent (HTTP)</h3>
-                        </div>
-                        <div class="box-body chart-responsive">
-                            <div class="chart" id="device-pie" style="height: 600px;"></div>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-
-                </div><!-- /.col (LEFT) -->
-                <div class="col-md-6">
-                    <!-- LINE CHART -->
-                    <div class="box box-primary">
-                        <div class="box-header">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <h3 class="box-title">User Agent Version (HTTP)</h3>
-                            <div class="form-group pull-left" style="width:150px !important;height:10px;padding-top:3px;margin-left:3px;">
-                                <select class="form-control pull-left input-sm" style="margin-left: 5px;margin-top: 5px;" ng-model="browser.type" ng-change="changeBrowser()">
-                                    <option  value="Chrome">Chrome</option>
-                                    <option value="Firefox">Firefox</option>
-                                    <option value="Microsoft Internet Explorer">Internet Explorer</option>
-                                    <option value="Safari">Safari</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="box-body chart-responsive">
-                            <div class="chart" id="deviceVersion" style="height: 600px;"></div>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div><!-- /.col (RIGHT) -->
-            </div><!-- /.row -->
-
             <div class="row">
-                <div id="browserMainChart" class="col-md-6">
+                <div id="disciplineWiseStudentChart" class="col-md-6">
                     <!-- AREA CHART -->
                     <div id='browserMainChartBox' class="box box-primary">
                         <div class="box-header">
                             <i class="fa fa-bar-chart-o"></i>
-                            <h3 class="box-title">Browser</h3>
+                            <h3 class="box-title">Discipline</h3>
                             <div class="form-group pull-right" style="width:150px !important;height:10px;padding-top:3px;margin-left:3px;">
-                                <select class="form-control pull-left input-sm" style="margin-left: -10px;margin-top: 10px;" ng-model="selectedAPU" ng-change="changeAPU()">
-                                    <option value="0"> All Practice </option>
-                                    <option  ng-repeat="apu in apuList" ng-value="apu"> {{ apu }} </option>                                    
+                                <select class="form-control pull-left input-sm" style="margin-left: -10px;margin-top: 10px;" ng-model="selectedYear" ng-change="changeYear()">
+                                    <option value="0"> Select Year </option>
+                                    <option  ng-repeat="obj in yearArray" ng-value="obj"> {{ obj }} </option>                                    
                                 </select>
                             </div>
                         </div>
                         <div class="box-body chart-responsive">
-                            <div class="chart" id="user-device-pie" style="height: 600px;"></div>
+                            <div class="chart" id="discipline-pie" style="height: 600px;"></div>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
 
                 </div><!-- /.col (LEFT) -->
 
-                <div id="browserVersionChart" class="col-md-6">
+                <div id="subdisciplineWiseStudentChart" class="col-md-6">
                     <!-- AREA CHART -->
                     <div class="box box-primary">
                         <div class="box-header">
