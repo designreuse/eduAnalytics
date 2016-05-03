@@ -29,8 +29,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#discipline">
-                                <i class="fa fa-th"></i> <span>Discipline Analytics</span> 
+                            <a href="#institute">
+                                <i class="fa fa-th"></i> <span>Institute Analytics</span> 
                             </a>
                         </li>
                         <li class="treeview">
