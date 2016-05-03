@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  *
@@ -177,9 +178,51 @@ public class ReportsDAO {
         return array;
     }
     
+    
+    public JSONArray getYearWiseInstituteCount() throws SQLException {
+        DBConnector connector = new DBConnector();
+        Statement statement = null;
+        JSONArray array = new JSONArray();
+        try {
+            Connection connection = connector.getDBConnection();
+            statement = connection.createStatement();
+            String sql = "SELECT DISTINCT(schemetype) as schemetype FROM trainingscheme";
+            System.out.println(sql);
+            ResultSet res = statement.executeQuery(sql);
+            while (res.next()) {
+                String schemetype=res.getString(1);
+                System.out.println(schemetype);
+                JSONObject jSONObject = new JSONObject();
+                JSONArray yearArray = new JSONArray();
+                for(int i=2000;i<=2016;i++){
+                    String yearSQL = "SELECT COUNT(1) FROM institute INNER JOIN trainingscheme ON "
+                                     + "institute.training_scheme = trainingscheme.id WHERE schemetype='"+schemetype+"' AND established_year=2000";
+                    res = statement.executeQuery(sql);
+                    while(res.next()){
+                        
+                    }
+                    
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            if (statement != null && !statement.isClosed()) {
+                statement.close();
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            if (statement != null && !statement.isClosed()) {
+                statement.close();
+            }
+        } finally {
+            connector.closeDBConnection();
+        }
+        return array;
+    }
+    
+    
     public static void main(String[] args) throws Exception{
-        System.out.println(new ReportsDAO().getDisciplineWiseStudentCount(2011));
-        System.out.println(new ReportsDAO().getSubDisciplineWiseStudentCount("Mechanical Engineering",2010));
+        System.out.println(new ReportsDAO().getYearWiseInstituteCount());
     }
     
 }
