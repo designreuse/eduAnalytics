@@ -18,8 +18,19 @@
             String year = request.getParameter("year");
             String schemetype = request.getParameter("schemetype");
             out.println(dao.getSubTrainingSchemeWiseStudentCount(schemetype,Integer.parseInt(year)));
-        } else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT)){
+        }else if (action.equalsIgnoreCase(AnalyticsConstants.GETTRAININGSCHEMEWISE_INSTITUTE_COUNT)) {
+            String year = request.getParameter("year");
+            out.println(dao.getTrainingSchemeWiseInstituteCount(Integer.parseInt(year)));
+        } else if (action.equalsIgnoreCase(AnalyticsConstants.GETSUBTRAININGSCHEMEWISE_INSTITUTE_COUNT)) {
+            String year = request.getParameter("year");
+            String schemetype = request.getParameter("schemetype");
+            out.println(dao.getSubTrainingSchemeWiseInstituteCount(schemetype,Integer.parseInt(year)));
+        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT)){
             out.println(dao.getYearWiseInstituteCount());
+        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT_SubTrainingScheme)){
+            out.println(dao.getYearWiseInsCountPerSubTS());
+        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETALLTRAININGSCHEMES)){
+            out.println(dao.getAllTrainingSchemes());
         }      
     }
 %>

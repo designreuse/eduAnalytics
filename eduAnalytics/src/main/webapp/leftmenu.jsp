@@ -13,7 +13,17 @@
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="#dashboard">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                <i class="fa fa-dashboard"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#trainingscheme">
+                                <i class="fa fa-th"></i> <span>Training Scheme</span> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#institute">
+                                <i class="fa fa-th"></i> <span>Institute Analytics</span> 
                             </a>
                         </li>
                         <li class="treeview">
@@ -27,11 +37,6 @@
                                 <li><a href="#trainingscheme"><i class="fa fa-angle-double-right"></i> Training Scheme Wise</a></li>
                                 <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Course Wise</a></li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="#institute">
-                                <i class="fa fa-th"></i> <span>Institute Analytics</span> 
-                            </a>
                         </li>
                         <li class="treeview">
                             <a href="#">                                

@@ -47,6 +47,20 @@
                     </div><!-- /.box -->
                 </div><!-- /.col (LEFT) -->
             </div>
+            <div class="row">
+                <div id="institute_ts_Chart" class="col-md-12">
+                    <!-- AREA CHART -->
+                    <div id='browserMainChartBox' class="box box-primary">
+                        <div class="box-header">
+                            <i class="fa fa-bar-chart-o"></i>
+                            <h3 class="box-title">Institute</h3>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="institute_sub_trainingscheme-line" style="height: 300px;"></div>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div><!-- /.col (LEFT) -->
+            </div>
         </section>
     </aside>
 </div>
