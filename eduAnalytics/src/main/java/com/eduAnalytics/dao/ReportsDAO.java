@@ -392,9 +392,9 @@ public class ReportsDAO {
         }
         return array;
     }
-
+    
     public static void main(String[] args) throws Exception {
-        System.out.println(new ReportsDAO().getSubTrainingSchemeWiseInstituteCount("GTU Institutes",0));
+        System.out.println(new ReportsDAO().getTrainingSchemeWiseStudentCount(0));
     }
 
 }
