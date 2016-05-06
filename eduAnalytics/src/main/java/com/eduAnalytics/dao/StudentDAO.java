@@ -175,6 +175,12 @@ public class StudentDAO {
         }
         return array;
     }
+
+	/**
+	SELECT institute.name FROM student INNER JOIN institute_course ON student.attached_course = institute_course.id INNER JOIN institute ON 
+institute_course.institute_id = institute.id  GROUP BY institute.name;
+	**/
+
     
     public static void main(String[] args) {
         
