@@ -1,9 +1,9 @@
+<%@page import="com.eduAnalytics.dao.StudentDAO"%>
 <%@page import="com.eduAnalytics.utilities.AnalyticsConstants"%>
-<%@page import="com.eduAnalytics.dao.ReportsDAO"%>
 <%
     String action = request.getParameter("action");
     if (action != null && !action.isEmpty()) {
-        ReportsDAO dao = new ReportsDAO();
+        StudentDAO dao = new StudentDAO();
         if (action.equalsIgnoreCase(AnalyticsConstants.GETDISCIPLINEWISE_STUDENT_COUNT)) {
             String year = request.getParameter("year");
             out.println(dao.getDisciplineWiseStudentCount(Integer.parseInt(year)));
@@ -18,19 +18,6 @@
             String year = request.getParameter("year");
             String schemetype = request.getParameter("schemetype");
             out.println(dao.getSubTrainingSchemeWiseStudentCount(schemetype,Integer.parseInt(year)));
-        }else if (action.equalsIgnoreCase(AnalyticsConstants.GETTRAININGSCHEMEWISE_INSTITUTE_COUNT)) {
-            String year = request.getParameter("year");
-            out.println(dao.getTrainingSchemeWiseInstituteCount(Integer.parseInt(year)));
-        } else if (action.equalsIgnoreCase(AnalyticsConstants.GETSUBTRAININGSCHEMEWISE_INSTITUTE_COUNT)) {
-            String year = request.getParameter("year");
-            String schemetype = request.getParameter("schemetype");
-            out.println(dao.getSubTrainingSchemeWiseInstituteCount(schemetype,Integer.parseInt(year)));
-        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT)){
-            out.println(dao.getYearWiseInstituteCount());
-        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETYEARWISEINSTITUTE_COUNT_SubTrainingScheme)){
-            out.println(dao.getYearWiseInsCountPerSubTS());
-        }else if(action.equalsIgnoreCase(AnalyticsConstants.GETALLTRAININGSCHEMES)){
-            out.println(dao.getAllTrainingSchemes());
-        }      
+        }
     }
 %>

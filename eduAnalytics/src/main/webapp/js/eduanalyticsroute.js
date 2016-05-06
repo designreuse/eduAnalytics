@@ -1,18 +1,15 @@
 var eduAnalyticsApp = angular.module('eduAnalyticsApp', ['ngRoute']);
-console.log(eduAnalyticsApp);
 eduAnalyticsApp.config(['$routeProvider', function($routeProvider) {
 
         $routeProvider
         .when('/dashboard', {
             templateUrl: 'jsp/dashboard/dashboard.jsp'
-        }).when('/discipline', {
-            templateUrl: 'jsp/discipline/disciplinereport.jsp'
         }).when('/trainingscheme', {
             templateUrl: 'jsp/trainingscheme/trainingschemereport.jsp'
         }).when('/institute', {
             templateUrl: 'jsp/institute/institutereport.jsp'
-        }).when('/datapopulation', {
-            templateUrl: 'jsp/general/datapopulation/datapopulationinfo.jsp'
+        }).when('/student', {
+            templateUrl: 'jsp/student/studentreport.jsp'
         }).otherwise({
             templateUrl: 'jsp/errorpages/error404.jsp'
         });

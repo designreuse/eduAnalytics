@@ -17,5 +17,3 @@ monthArray[8] = "September";
 monthArray[9] = "October";
 monthArray[10] = "November";
 monthArray[11] = "December";
-
-console.log('here');
