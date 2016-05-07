@@ -82,7 +82,7 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">
+                        <a href="#student" class="small-box-footer">
                             More info <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </div>

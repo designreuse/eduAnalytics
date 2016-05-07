@@ -18,6 +18,12 @@
             String year = request.getParameter("year");
             String schemetype = request.getParameter("schemetype");
             out.println(dao.getSubTrainingSchemeWiseStudentCount(schemetype,Integer.parseInt(year)));
+        }else if (action.equalsIgnoreCase(AnalyticsConstants.GETINSTITUTEWISE_STUDENT_RESULT_COUNT)) {
+            out.println(dao.getInstituteWiseStudentResultCount());
+        }else if (action.equalsIgnoreCase(AnalyticsConstants.GETSTUDENTLISTFROMINSTITUTE)) {
+            String name = request.getParameter("name");
+            out.println(dao.getStudentListFromInstitute(name));
         }
+        
     }
 %>

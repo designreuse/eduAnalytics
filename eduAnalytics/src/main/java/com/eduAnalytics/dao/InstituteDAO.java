@@ -367,6 +367,16 @@ public class InstituteDAO {
                 obj.put("zone", res.getString(7));
                 obj.put("distict", res.getString(8));
             }
+            sql="SELECT course.course_name FROM institute INNER JOIN institute_course"
+                + " ON institute.id=institute_course.institute_id INNER JOIN course" +
+                " ON institute_course.course_id=course.id " +
+                " WHERE institute.name='"+insname+"'";
+            res = statement.executeQuery(sql);
+            JSONArray courseArray = new JSONArray();
+            while (res.next()) {
+                courseArray.put(res.getString(1));
+            }
+            obj.put("courseArray", courseArray);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {

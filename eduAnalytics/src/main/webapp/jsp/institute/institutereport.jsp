@@ -110,7 +110,7 @@
                                             <td width="40%" class="borderClass" style="text-align: left;">
                                                 <span ng-bind="item.discipline"></span>  
                                             </td>
-                                            <td width="30%" class="borderClass" style="text-align: left;" ng-click="openInstituteDetailModal(item.institutename)">
+                                            <td width="30%" class="borderClass" style="text-align: left;cursor: pointer;color: blue" ng-click="openInstituteDetailModal(item.institutename)">
                                                 <span ng-bind="item.institutename"></span>  
                                             </td>
                                             <td width="30%" class="borderClass" style="text-align: left;">
@@ -214,6 +214,10 @@
                                 <tr>
                                     <td style="width: 20%">District</td>
                                     <td>{{instituteOject.distict}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%">Offered Courses</td>
+                                    <td>{{instituteOject.courseArrayStr}}</td>
                                 </tr>
                             </table>
                         </div>

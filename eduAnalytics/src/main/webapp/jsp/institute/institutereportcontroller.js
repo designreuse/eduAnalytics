@@ -25,10 +25,14 @@ eduAnalyticsApp.controller('institutereportcontroller', function ($scope, $http)
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             dataType: 'text',
             method: 'GET',
-            url: '/eduAnalytics/servicejsp/institutecontroller.jsp?action=getInstituteDetailByName&name=' + institutename
+            url: '/eduAnalytics/servicejsp/institutecontroller.jsp?action=getInstituteDetailByName&name=' + encodeURIComponent(institutename)
         }).then(function (response) {
-            console.log(response.data);
             $scope.instituteOject = response.data;
+            $scope.instituteOject.courseArrayStr='';
+            for(var i in $scope.instituteOject.courseArray){
+                $scope.instituteOject.courseArrayStr+=$scope.instituteOject.courseArray[i]+", ";
+            }
+            $scope.instituteOject.courseArrayStr = $scope.instituteOject.courseArrayStr.replace(/,\s*$/, "");
             $("#institutedetailModal").modal();
         }, function (response) {
             throw "Internal Error occured while fetching institutes by discipline";

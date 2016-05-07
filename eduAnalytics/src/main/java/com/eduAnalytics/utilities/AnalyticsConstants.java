@@ -42,6 +42,9 @@ public class AnalyticsConstants {
     public static final String GETSUBDISCIPLINEWISE_STUDENT_COUNT="getSubDisciplineWiseStudentCount";
     public static final String GETTRAININGSCHEMEWISE_STUDENT_COUNT="getTrainingSchemeWiseStudentCount";
     public static final String GETSUBTRAININGSCHEMEWISE_STUDENT_COUNT="getSubTrainingSchemeWiseStudentCount";
+    public static final String GETINSTITUTEWISE_STUDENT_RESULT_COUNT="getInstituteWiseStudentResultCount";
+    public static final String GETSTUDENTLISTFROMINSTITUTE="getStudentListFromInstitute";
+    
     
     public static final String GETYEARWISEINSTITUTE_COUNT="getYearWiseInstituteCount";
     public static final String GETYEARWISEINSTITUTE_COUNT_SubTrainingScheme="getYearWiseInstituteCount_subTS";
