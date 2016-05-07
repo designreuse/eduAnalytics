@@ -7,7 +7,7 @@
                 <img src="img/avatar3.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Willis,Sam</p>
+                <p>User,User</p>
             </div>
         </div>
         <ul class="sidebar-menu">
