@@ -42,3 +42,4 @@
 <script src="${pageContext.request.contextPath}/jsp/trainingscheme/trainingschemecontroller.js"></script>
 <script src="${pageContext.request.contextPath}/jsp/institute/institutereportcontroller.js"></script>
 <script src="${pageContext.request.contextPath}/jsp/student/studentreportcontroller.js"></script>
+<script src="${pageContext.request.contextPath}/jsp/adminpages/discipline/adddisciplinecontroller.js"></script>

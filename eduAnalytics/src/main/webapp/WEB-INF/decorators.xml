@@ -2,4 +2,6 @@
 <decorators>
     <decorator name="layout" page="/layout.jsp">
     </decorator>
+    <decorator name="adminlayout" page="/adminlayout.jsp">
+    </decorator>
 </decorators>
