@@ -64,7 +64,7 @@
                                             <td width="20%" class="borderClass" style="text-align: left;">
                                                 <span ng-bind="item.course_name"></span>  
                                             </td>
-                                            <td width="5%" class="borderClass" style="text-align: left;">
+                                            <td width="10%" class="borderClass" style="text-align: left;">
                                                 <span ng-bind="item.short_name"></span>  
                                             </td>
                                             <td width="20%" class="borderClass" style="text-align: left;">

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-eduAnalyticsApp.controller('adddisciplinecontroller', function ($scope, $http) {
+eduAnalyticsApp.controller('addcoursecontroller', function ($scope, $http) {
 
     $scope.attachFile = function (element) {
         $scope.$apply(function ($scope) {
@@ -22,13 +22,15 @@ eduAnalyticsApp.controller('adddisciplinecontroller', function ($scope, $http) {
         $http({
             method: 'POST',
             withCredentials: false,
-            url: '/eduAnalytics/FileUploadServlet?action=addDiscipline',
+            url: '/eduAnalytics/FileUploadServlet?action=addCourse',
             data: fd,
             headers: {'Content-Type': undefined},
             transformRequest: angular.identity
         }).then(function (response) {
             console.log(response);
             $scope.retMsg = "File Uploaded Successfully";
+            $("#noofrecstoimported").append(" Records successfully imported:");
+            $("#noofrecstoimported").append(response.data);
         }, function (response) {
             throw "Internal Error while uploading disciplines ";
         });
@@ -37,43 +39,7 @@ eduAnalyticsApp.controller('adddisciplinecontroller', function ($scope, $http) {
 
 });
 
-eduAnalyticsApp.directive('fileReader', function () {
-    return {
-        scope: {
-            fileReader: "="
-        },
-        link: function (scope, element) {
-            $(element).on('change', function (changeEvent) {
-                var files = changeEvent.target.files;
-                if (files.length) {
-                    var r = new FileReader();
-                    r.onload = function (e) {
-                        var table = $("<table class=\"table table-condensed\"/>");
-                        var rows = e.target.result.split("\n");
-                        scope.$apply(function () {
 
-                            for (var i = 0; i < rows.length; i++) {
-                                var row = $("<tr />");
-                                var cells = rows[i].split(",");
-                                for (var j = 0; j < cells.length; j++) {
-                                    var cell = $("<td />");
-                                    cell.html(cells[j]);
-                                    row.append(cell);
-                                }
-                                table.append(row);
-                            }
-                            $("#dvCSV").html('');
-                            $("#dvCSV").append(table);
-                            console.log(scope.fileReader);
-                        });
-                    };
-
-                    r.readAsText(files[0]);
-                }
-            });
-        }
-    };
-});
 
 
 

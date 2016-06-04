@@ -30,7 +30,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#viewcourse"><i class="fa fa-angle-double-right"></i> View </a></li>
-                    <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Add </a></li>
+                    <li><a href="#addcourse"><i class="fa fa-angle-double-right"></i> Add </a></li>
                 </ul>
             </li>
             <li class="treeview">

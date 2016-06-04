@@ -34,8 +34,8 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <span ng-bind="retMsg" />
-                <b>&nbsp;CSV File</b>
+                <span ng-bind="retMsg" /><br />
+                <b>&nbsp;CSV File</b><span id="noofrecstoimported"></span>
                 <table style="width: 30%">
                     <tr>
                         <td>

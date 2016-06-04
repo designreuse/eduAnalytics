@@ -114,6 +114,8 @@ public class FileUploadServlet extends HttpServlet {
                     int successEntries = 0;
                     if (action.equals("addDiscipline")) {
                         successEntries = adminDAO.uploadDiscipline(fileItem.getString());
+                    }else if (action.equals("addCourse")) {
+                        successEntries = adminDAO.uploadCourse(fileItem.getString());
                     }
                     System.out.println("servlet entries " + successEntries);
                     response.setContentType("text/plain");

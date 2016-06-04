@@ -22,20 +22,20 @@
     }
 
 </style>
-<div ng-controller="adddisciplinecontroller">
+<div ng-controller="addcoursecontroller">
     <aside class="right-side">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Upload Disciplines
+                Upload Courses
             </h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <span ng-bind="retMsg" />
-                <b>&nbsp;CSV File</b>
+                <span ng-bind="retMsg" /><br />
+                <b>&nbsp;CSV File</b><span id="noofrecstoimported"></span>
                 <table style="width: 30%">
                     <tr>
                         <td>

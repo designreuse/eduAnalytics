@@ -21,24 +21,111 @@ import org.json.JSONObject;
  */
 public class AdminDAO {
 
+    public int uploadCourse(String str) {
+        DBConnector connector = new DBConnector();
+        Connection connection = null;
+        Statement statement = null;
+        Statement insertStmt = null;
+        Statement lastStmt = null;
+        int iSuccess = 0;
+        try {
+            connection = connector.getDBConnection();
+            String strArray[] = str.split("\n");
+            int length = strArray.length;
+            if (length > 1) {
+                for (int i = 1; i < length; i++) {
+                    statement = connection.createStatement();
+                    insertStmt = connection.createStatement();
+                    lastStmt = connection.createStatement();
+                    System.out.println(strArray[i]);
+                    String strCourseArray[] = strArray[i].split(",");
+
+                    if (strCourseArray.length > 0) {
+                        String disciplineStr = "select id from discipline where name='" + strCourseArray[2] + "'";
+                        ResultSet rs = statement.executeQuery(disciplineStr);
+                        int disciplineid = 0;
+                        while (rs.next()) {
+                            disciplineid = rs.getInt(1);
+                        }
+                        rs.close();
+                        if (disciplineid == 0) {
+                            String insertDisciplineQuery = "insert into discipline(name) values ('" + strCourseArray[2] + "')";
+                            try {
+                                int iRet = insertStmt.executeUpdate(insertDisciplineQuery);
+                                if (iRet > 0) {
+                                    System.out.println("iRet : " + iRet);
+                                    String strLastInsertQuery = "SELECT LAST_INSERT_ID()";
+
+                                    ResultSet rsLast = lastStmt.executeQuery(strLastInsertQuery);
+                                    while (rsLast.next()) {
+                                        disciplineid = rsLast.getInt(1);
+                                    }
+                                    rsLast.close();
+                                    System.out.println("New disp Id : " + disciplineid);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Internal Excpetion : " + e);
+                                e.printStackTrace();
+                            }
+                        }
+
+                        String insertQuery = "insert into course(course_name,short_name,discipline_id,"
+                                + "duration,comments,course_type,course_group) values"
+                                + "('" + strCourseArray[0] + "','" + strCourseArray[1] + "',"
+                                + disciplineid + ",'" + strCourseArray[3] + "'"
+                                + ",'" + strCourseArray[4] + "','" + strCourseArray[5] + "'"
+                                + ",'" + strCourseArray[6] + "')";
+                        System.out.println("insertQuery : " + insertQuery);
+                        try {
+                            int iRet = statement.executeUpdate(insertQuery);
+                            System.out.println(iRet);
+                            iSuccess++;
+                        } catch (Exception e) {
+                            System.out.println("Internal Exception");
+                            e.printStackTrace();
+                        }
+                        System.out.println("Discipline : " + disciplineid);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Global Excpetion");
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                lastStmt.close();
+                insertStmt.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return iSuccess;
+    }
+
     public int uploadDiscipline(String str) {
         DBConnector connector = new DBConnector();
         Connection connection = null;
         Statement statement = null;
-        int iSuccess=0;
+        int iSuccess = 0;
         try {
             connection = connector.getDBConnection();
             statement = connection.createStatement();
             String strArray[] = str.split("\n");
-            int length=strArray.length;
-            if(length > 1) {
+            int length = strArray.length;
+            if (length > 1) {
                 for (int i = 1; i < length; i++) {
                     String insertQuery = "insert into discipline(name) values ('" + strArray[i] + "')";
-                    try{
+                    try {
                         int iRet = statement.executeUpdate(insertQuery);
                         System.out.println(iRet);
                         iSuccess++;
-                    }catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println("Internal Excpetion");
                     }
                 }
@@ -59,7 +146,7 @@ public class AdminDAO {
         }
         return iSuccess;
     }
-    
+
     public JSONArray getAllDisciplines() throws SQLException {
         DBConnector connector = new DBConnector();
         Statement statement = null;
@@ -80,7 +167,7 @@ public class AdminDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(res != null){
+            if (res != null) {
                 res.close();
             }
             if (statement != null && !statement.isClosed()) {
@@ -90,7 +177,7 @@ public class AdminDAO {
         }
         return array;
     }
-    
+
     public JSONArray getAllCourses() throws SQLException {
         DBConnector connector = new DBConnector();
         Statement statement = null;
@@ -117,7 +204,7 @@ public class AdminDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(res != null){
+            if (res != null) {
                 res.close();
             }
             if (statement != null && !statement.isClosed()) {
