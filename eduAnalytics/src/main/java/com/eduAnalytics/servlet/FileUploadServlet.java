@@ -110,21 +110,19 @@ public class FileUploadServlet extends HttpServlet {
                     );
                     System.out.println("</td>");
                 } else {
-//                    System.out.println("<td>file form field</td><td>FIELD NAME: " + fileItem.getFieldName()
-//                            + "STRING: " + fileItem.getString()
-//                            + "NAME: " + fileItem.getName()
-//                            + "CONTENT TYPE: " + fileItem.getContentType()
-//                            + "SIZE (BYTES): " + fileItem.getSize()
-//                            + "TO STRING: " + fileItem.toString()
-//                    );
-//                    System.out.println("</td>");
                     AdminDAO adminDAO = new AdminDAO();
-                    if(action.equals("addDiscipline")){
-                        adminDAO.uploadDiscipline(fileItem.getString());
+                    int successEntries = 0;
+                    if (action.equals("addDiscipline")) {
+                        successEntries = adminDAO.uploadDiscipline(fileItem.getString());
                     }
+                    System.out.println("servlet entries " + successEntries);
+                    response.setContentType("text/plain");
+                    out.print(successEntries);
                 }
             }
         } catch (FileUploadException e) {
+            e.printStackTrace();
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

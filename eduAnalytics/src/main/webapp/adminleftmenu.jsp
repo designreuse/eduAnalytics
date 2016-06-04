@@ -18,7 +18,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> View </a></li>
+                    <li><a href="#viewdiscipline"><i class="fa fa-angle-double-right"></i> View </a></li>
                     <li><a href="#adddiscipline"><i class="fa fa-angle-double-right"></i> Add </a></li>
                 </ul>
             </li>
@@ -29,7 +29,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> View </a></li>
+                    <li><a href="#viewcourse"><i class="fa fa-angle-double-right"></i> View </a></li>
                     <li><a href="#datapopulation"><i class="fa fa-angle-double-right"></i> Add </a></li>
                 </ul>
             </li>

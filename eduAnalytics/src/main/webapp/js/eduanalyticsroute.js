@@ -12,6 +12,10 @@ eduAnalyticsApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'jsp/student/studentreport.jsp'
         }).when('/adddiscipline', {
             templateUrl: 'jsp/adminpages/discipline/adddiscipline.jsp'
+        }).when('/viewdiscipline', {
+            templateUrl: 'jsp/adminpages/discipline/viewdiscipline.jsp'
+        }).when('/viewcourse', {
+            templateUrl: 'jsp/adminpages/course/viewcourse.jsp'
         }).otherwise({
             templateUrl: 'jsp/errorpages/error404.jsp'
         });
